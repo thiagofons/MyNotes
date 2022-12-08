@@ -1,0 +1,9 @@
+.profileCard {
+  width: 15rem;
+  height: 4rem;
+  background-color: rgba(0,0,0,10%);
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  border-radius: 1rem;
+}

@@ -17,7 +17,7 @@ function App() {
 
       <Container>
         <Routes>
-          <Route exact path="/" element={<Home />}></Route>
+          <Route exact path="/home" element={<Home />}></Route>
         </Routes>
       </Container>
 

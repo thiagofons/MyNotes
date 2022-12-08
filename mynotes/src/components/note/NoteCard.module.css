@@ -1,0 +1,22 @@
+.noteCard {
+  width: 15rem;
+  height: 15rem;
+  background-color: #ffc93c;
+  margin-right: 1rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 .2rem .1rem rgba(0,0,0,50%);
+}
+
+.noteCard h2 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.noteCard textarea {
+  width: 100%;
+  padding: 0;
+  border: none;
+  height: 100%;
+}
