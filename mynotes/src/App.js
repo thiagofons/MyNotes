@@ -12,16 +12,7 @@ import NavBar from "./components/layout/NavBar";
 
 function App() {
   return (
-    <Router>
-      <NavBar/>
-
-      <Container>
-        <Routes>
-          <Route exact path="/home" element={<Home />}></Route>
-        </Routes>
-      </Container>
-
-    </Router>
+    <Home />
   );
 }
 

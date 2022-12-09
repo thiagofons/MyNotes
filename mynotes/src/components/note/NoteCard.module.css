@@ -1,22 +1,57 @@
 .noteCard {
-  width: 15rem;
-  height: 15rem;
+  width: 10rem;
+  height: 10rem;
   background-color: #ffc93c;
-  margin-right: 1rem;
   border-radius: 1rem;
   padding: 1rem;
   box-shadow: 0 .2rem .1rem rgba(0,0,0,50%);
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  margin-right: .5rem;
+}
+.noteCard:hover {
+  background-color: #fcbb16;
+  cursor: pointer;
 }
 
-.noteCard h2 {
+input {
+  width: 100%;
   margin: 0;
+  padding: .5rem 0;
+  background-color: transparent;
+  border: none;
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
   font-size: 1rem;
 }
+input::placeholder {
+  font-weight: bold;
+}
+input:focus {
+  outline: none;
+}
 
-.noteCard textarea {
+textarea {
+  resize: none;
   width: 100%;
+  display: block;
+  height: 100%;
   padding: 0;
   border: none;
-  height: 100%;
+  background-color: transparent;
+  font-family: "Poppins", sans-serif;
+}
+textarea:focus {
+  outline: none;
+}
+textarea::-webkit-scrollbar {
+  width: 4px;
+}
+textarea::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+textarea::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,50%);
+  border-radius: 2rem;
 }
