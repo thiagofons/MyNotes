@@ -15,14 +15,19 @@ function Container() {
   }, []);
 
   const getNotes = () => {
-    for(let i = 0; i < localStorage.length; i++) {
-      const item = JSON.parse(localStorage.getItem(i));
-      console.log(item);
-      const newNote = <NoteCard id={localStorage.key(i)} name={item.title} text={item.content}/>
+    for (let key in localStorage) {
+      const item = JSON.parse(localStorage.getItem(key));
 
-      setNotes((notes) => [...notes, newNote]);
+      if(item) {
+        const newNote = (
+          <NoteCard id={key} name={item.title} text={item.content} />
+        );
+  
+        setNotes((notes) => [...notes, newNote]);
+      }
+      
     }
-  }
+  };
 
   const addNote = () => {
     setNotes((notes) => [...notes, `<NoteCard />`]);
@@ -30,25 +35,34 @@ function Container() {
     const newNote = {
       id: notes.length,
       title: "",
-      content: ""
-    }
+      content: "",
+    };
     localStorage.setItem(newNote.id, JSON.stringify(newNote));
   };
 
   const deleteNote = (id) => {
-    console.log(id);
-  }
+    // Delete on the DOM
+    const newNotes = notes.filter((note) => {
+      console.log(note.props.id);
+      return note.props.id != id;
+    });
+    setNotes(newNotes);
+
+    // Delete on the localStorage
+    localStorage.removeItem(id);
+  };
 
   return (
     <div className={styles.container}>
       {notes &&
-        notes.map((note) => (
+        notes.map((note, index) => (
           <NoteCard
-            key={note.id}
-            id={note.id}
+            key={index}
+            id={index
+            }
             name={note.title}
             text={note.content}
-            del={deleteNote}
+            handleDel={deleteNote}
           />
         ))}
       <NewNoteCard onClick={addNote} />
