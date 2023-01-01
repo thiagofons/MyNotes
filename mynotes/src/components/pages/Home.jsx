@@ -5,7 +5,6 @@ import Container from "../layout/Container";
 import NavBar from "../layout/NavBar";
 
 function Home() {
-  // Importar os cards do usuário via fetch API
 
   return (
     <>

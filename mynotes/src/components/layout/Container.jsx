@@ -10,19 +10,19 @@ function Container() {
 
   // Get current notes
   useEffect(() => {
-    fetch("http://localhost:4000/notes", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application.json",
-      },
-    })
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data);
-        setNotes(data);
-      })
-      .catch((err) => console.log(err));
+    setNotes([]);
+    getNotes();
   }, []);
+
+  const getNotes = () => {
+    for(let i = 0; i < localStorage.length; i++) {
+      const item = JSON.parse(localStorage.getItem(i));
+      console.log(item);
+      const newNote = <NoteCard id={localStorage.key(i)} name={item.title} text={item.content}/>
+
+      setNotes((notes) => [...notes, newNote]);
+    }
+  }
 
   const addNote = () => {
     setNotes((notes) => [...notes, `<NoteCard />`]);
@@ -32,19 +32,12 @@ function Container() {
       title: "",
       content: ""
     }
-
-    fetch("http://localhost:4000/notes", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/jon"
-      },
-      body: JSON.stringify(newNote)
-    }).then(resp => resp.json())
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((err) => console.log(err))
+    localStorage.setItem(newNote.id, JSON.stringify(newNote));
   };
+
+  const deleteNote = (id) => {
+    console.log(id);
+  }
 
   return (
     <div className={styles.container}>
@@ -55,6 +48,7 @@ function Container() {
             id={note.id}
             name={note.title}
             text={note.content}
+            del={deleteNote}
           />
         ))}
       <NewNoteCard onClick={addNote} />

@@ -1,18 +1,35 @@
 .noteCard {
-  width: 10rem;
-  height: 10rem;
+  width: 15rem;
+  height: 15rem;
   background-color: #ffc93c;
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 2rem 1rem;
   box-shadow: 0 .2rem .1rem rgba(0,0,0,50%);
   display: flex;
   flex-direction: column;
   margin: 1rem;
   margin-right: .5rem;
+  position: relative;
 }
 .noteCard:hover {
   background-color: #fcbb16;
   cursor: pointer;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #e3170a;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  padding: 0;
+}
+.closeBtn:hover {
+  background-color: rgba(255,255,255,25%);
+}
+.closeBtn:target {
+  background-color: rgba(255,255,255,50%);
 }
 
 input {
