@@ -3,17 +3,16 @@
   height: 15rem;
   background-color: #ffc93c;
   border-radius: 1rem;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 1rem 1rem;
   box-shadow: 0 .2rem .1rem rgba(0,0,0,50%);
   display: flex;
   flex-direction: column;
-  
+  transition: .25s;
   margin-right: .5rem;
   position: relative;
 }
 .noteCard:hover {
   background-color: #fcbb16;
-  cursor: pointer;
 }
 
 .closeBtn {
@@ -27,6 +26,7 @@
 }
 .closeBtn:hover {
   background-color: rgba(255,255,255,25%);
+  cursor: pointer;
 }
 .closeBtn:target {
   background-color: rgba(255,255,255,50%);
@@ -71,4 +71,23 @@ textarea::-webkit-scrollbar-track {
 textarea::-webkit-scrollbar-thumb {
   background-color: rgba(0,0,0,50%);
   border-radius: 2rem;
+}
+
+.submitBtn {
+  border: none;
+  border-radius: .5rem;
+  padding: .3rem;
+  color: #fff;
+  background-color: #212121;
+  display: none;
+  margin-top: .3rem;
+  font-family: "Poppins", sans-serif;
+  transition: .25s;
+}
+.submitBtn:hover {
+  background-color: #0c0c0c;
+  cursor: pointer;
+}
+.display {
+  display: block;
 }

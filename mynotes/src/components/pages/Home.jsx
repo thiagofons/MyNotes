@@ -1,17 +1,17 @@
-import NewNoteCard from "../note/NewNoteCard";
-import NoteCard from "../note/NoteCard";
-
 import Container from "../layout/Container";
 import NavBar from "../layout/NavBar";
+import NotesContainer from "../layout/NotesContainer";
 
-function Home() {
+export default function Home() {
 
   return (
     <>
-      <NavBar />
-      <Container />
+      <Container>
+        <NavBar />
+        <NotesContainer />
+      </Container>
     </>
   );
 }
 
-export default Home;
+

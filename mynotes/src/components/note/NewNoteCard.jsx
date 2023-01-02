@@ -1,18 +1,11 @@
-import {BsMusicNoteList, BsPlusLg} from "react-icons/bs"
+import { BsPlusLg } from "react-icons/bs";
 
-import styles from "./NewNoteCard.module.css"
+import styles from "./NewNoteCard.module.css";
 
-function NewNoteCard({onClick}) {
-  const handleClick = () => {
-    onClick();
-  }
-
-
+export default function NewNoteCard({ action }) {
   return (
-    <div className={styles.newNote} onClick={handleClick}>
+    <div className={styles.newNote} onClick={action}>
       <BsPlusLg className={styles.plus} />
     </div>
-  )
+  );
 }
-
-export default NewNoteCard;

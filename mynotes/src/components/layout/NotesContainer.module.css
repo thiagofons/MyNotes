@@ -1,0 +1,10 @@
+.notesContainer {
+  padding: 1rem;
+  display: grid;  
+  gap: 1rem;
+
+  grid-template-columns: repeat(auto-fill, 15rem);
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
