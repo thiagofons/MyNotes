@@ -20,7 +20,6 @@
 @keyframes cardAnimation {
   from {
     width: 0;
-
   }
   to {
     width: 15rem;
