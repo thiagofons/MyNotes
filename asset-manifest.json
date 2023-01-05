@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.879ece24.css",
+    "main.js": "/static/js/main.90510db6.js",
+    "static/js/787.5cf4e54a.chunk.js": "/static/js/787.5cf4e54a.chunk.js",
+    "static/media/Poppins-Regular.ttf": "/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
+    "static/media/MyNotes-Logo.png": "/static/media/MyNotes-Logo.ad0316968bbf03bd746d.png",
+    "index.html": "/index.html",
+    "main.879ece24.css.map": "/static/css/main.879ece24.css.map",
+    "main.90510db6.js.map": "/static/js/main.90510db6.js.map",
+    "787.5cf4e54a.chunk.js.map": "/static/js/787.5cf4e54a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.879ece24.css",
+    "static/js/main.90510db6.js"
+  ]
+}
