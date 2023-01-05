@@ -17,18 +17,6 @@
   cursor: pointer;
   color: rgba(0,0,0, 50%);
   background-color: rgba(255,255,255,40%);
-  animation: cardHover .2s;
-  border-radius: 50%;
-}
-
-
-@keyframes cardHover {
-  from {
-    border-radius: 1rem;
-  }
-  to {
-    border-radius: 50%;
-  }
 }
 
 .plus {
