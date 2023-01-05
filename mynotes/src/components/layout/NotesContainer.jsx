@@ -4,68 +4,74 @@ import styles from "./NotesContainer.module.css";
 
 import NewNoteCard from "../note/NewNoteCard";
 import NoteCard from "../note/NoteCard";
+import useStateWithCallback from "../tools/UseStateWithCallback";
 
-export default function NotesContainer(props) {
-  const [notes, setNotes] = useState([]);
+export default function NotesContainer() {
+  const [notes, setNotes] = useStateWithCallback([]);
+  const [numNotes, setNumNotes] = useStateWithCallback(0);
 
-  // Get notes
   useEffect(() => {
-    recoverData();
-  }, []);
-
-  // Save data on localStorage
-  const saveData = (id, title, content) => {
-    setNotes(
-      notes.map((note) => {
-        console.log(note);
-        if (note.id === id) {
-          console.log(note.id);
-          note.title = title;
-          note.content = content;
-        }
-      })
-    );
-    localStorage.setItem("notes", JSON.stringify(notes));
-    recoverData();
-  };
-
-  // Recover data from localStorage
-  const recoverData = () => {
+    // Recover note from localStorage
     const items = JSON.parse(localStorage.getItem("notes"));
     if (items) setNotes(items);
-  };
 
-  // Add notes button
+    // Recover the number of notes from localStorage
+    const num = JSON.parse(localStorage.getItem("numNotes"));
+    if (num) {
+      setNumNotes(num);
+    } else {
+      setNumNotes(0);
+      localStorage.setItem("numNotes", JSON.stringify(0));
+    }
+  }, []);
+
   const addNote = () => {
     let newNoteObj = {
-      id: notes.length,
+      id: numNotes,
       title: "",
       content: "",
     };
-    setNotes([...notes, newNoteObj]);
-    if (notes) localStorage.setItem("notes", JSON.stringify(notes));
+    setNotes([...notes, newNoteObj], (prevNotes, newNotes) => {
+      localStorage.setItem("notes", JSON.stringify(newNotes));
+
+      // Update num notes
+      setNumNotes(numNotes + 1, (prevNumNotes, newNumNotes) => {
+        localStorage.setItem("numNotes", JSON.stringify(newNumNotes));
+      });
+    });
   };
 
-  // Remove note button
   const removeNote = (id) => {
-    console.log(notes, id);
+    setNotes(
+      notes.filter((note) => note.id !== id),
+      (prevNotes, newNotes) => {
+        localStorage.setItem("notes", JSON.stringify(newNotes));
+      }
+    );
+  };
 
-    setNotes(notes.filter((note) => note.id !== id));
-    
-    if (notes) localStorage.setItem("notes", JSON.stringify(notes));
-    
+  const editNote = (id, title, content) => {
+    setNotes([...notes], (prevNotes, newNotes) => {
+      newNotes.forEach((note) => {
+        if (note.id === id) {
+          note.title = title;
+          note.content = content;
+        }
+      });
+      localStorage.setItem("notes", JSON.stringify(newNotes));
+    });
   };
 
   return (
     <div className={styles.notesContainer}>
       {notes &&
-        notes.map((note, index) => (
+        notes.map((note) => (
           <NoteCard
-            key={index}
+            key={note.id}
             id={note.id}
-            handleRemove={removeNote}
-            handleSubmit={saveData}
             name={note.title}
+            handleRemove={removeNote}
+            handleSubmit={editNote}
             text={note.content}
           />
         ))}

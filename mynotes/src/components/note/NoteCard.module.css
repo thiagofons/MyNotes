@@ -1,6 +1,7 @@
 .noteCard {
   width: 15rem;
   height: 15rem;
+  aspect-ratio: 1 / 1;
   background-color: #ffc93c;
   border-radius: 1rem;
   padding: 2rem 1rem 1rem 1rem;
@@ -10,9 +11,21 @@
   transition: .25s;
   margin-right: .5rem;
   position: relative;
+  animation: cardAnimation .5s;
 }
 .noteCard:hover {
   background-color: #fcbb16;
+}
+
+@keyframes cardAnimation {
+  from {
+    width: 0%;
+    height: 0%;
+  }
+  to {
+    width: 100%;
+    height: 15rem;
+  }
 }
 
 .closeBtn {
@@ -90,4 +103,10 @@ textarea::-webkit-scrollbar-thumb {
 }
 .display {
   display: block;
+}
+
+@media screen and (max-width: 480px) {
+  .noteCard {
+    width: 100%;
+  }
 }

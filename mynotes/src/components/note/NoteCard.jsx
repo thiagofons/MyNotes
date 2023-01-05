@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import _uniqueId from 'lodash/uniqueId';
 
 import { AiOutlineMinus } from "react-icons/ai";
 
@@ -8,9 +7,9 @@ import styles from "./NoteCard.module.css";
 export default function NoteCard({
   id,
   handleRemove,
+  handleSubmit,
   name,
   text,
-  handleSubmit,
 }) {
   const [title, setTitle] = useState();
   const [content, setContent] = useState();
