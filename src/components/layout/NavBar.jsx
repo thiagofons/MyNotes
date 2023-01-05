@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import styles from "./NavBar.module.css"
 import logo from "../../imgs/MyNotes-Logo.png";
 
