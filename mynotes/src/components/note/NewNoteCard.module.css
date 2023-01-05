@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: .2s;
   font-size: 5rem;
   font-weight: bold;
   color: rgba(0,0,0,25%);
@@ -16,10 +17,26 @@
   cursor: pointer;
   color: rgba(0,0,0, 50%);
   background-color: rgba(255,255,255,40%);
+  animation: cardClick 3;
+}
+
+@keyframes cardClick {
+  from {
+    border-radius: 1rem;
+  }
+  to {
+    border-radius: 50%;
+  }
 }
 
 .plus {
   width: 5rem;
   border-radius: 50%;
   padding: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+  .newNote {
+    width: 100%;
+  }
 }
