@@ -19,12 +19,11 @@
 }
 @keyframes cardAnimation {
   from {
-    width: 10rem;
-    height: 10rem;
+    width: 0;
+
   }
   to {
     width: 15rem;
-    height: 15rem;
   }
 }
 
