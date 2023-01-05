@@ -1,5 +1,5 @@
 .newNote {
-  width: 15rem;
+  width: 100%;
   height: 15rem;
   background-color: rgba(255,255,255,60%);
   border-radius: 1rem;
@@ -17,10 +17,12 @@
   cursor: pointer;
   color: rgba(0,0,0, 50%);
   background-color: rgba(255,255,255,40%);
-  animation: cardClick 3;
+  animation: cardHover .2s;
+  border-radius: 50%;
 }
 
-@keyframes cardClick {
+
+@keyframes cardHover {
   from {
     border-radius: 1rem;
   }
@@ -35,8 +37,8 @@
   padding: 1rem;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 480px) {
   .newNote {
-    width: 100%;
+    width: 15rem;
   }
 }
