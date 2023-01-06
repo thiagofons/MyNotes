@@ -61,7 +61,7 @@ The color choicing was made having its simplicity in mind, in a way that not onl
 
 ## Credits
 
-Some of my friends gave me some tips to help my deevelopment process and I can't help but mention them here:
+Some of my friends gave me nice tips to help my deevelopment process and I can't help but mention them here:
 
 - Danilo Medeiros: [GitHub](https://github.com/Dhanilow15)
 - Heitor Callipo: [GitHub](https://github.com/heitorcallipo)
