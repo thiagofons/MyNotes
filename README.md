@@ -29,7 +29,7 @@ MyNotes is an intuitive post-it simulator for navigators. Add and remove notes (
 
 ### Initial ideas
 
-At first, my intention was to build an utra-simple post-it app that anyone could use to write their notes. 
+At first, my intention was to build an utra-simple post-it app that anyone could use to write their notes. Then I realize that it could be a grater project since I keep updating its functionalities while I learn about new front-end concepts.
 
 ### Design
 
