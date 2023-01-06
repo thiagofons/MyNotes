@@ -59,6 +59,9 @@ The color choicing was made having its simplicity in mind, in a way that not onl
 3. Animations:
 - Learning how CSS Animations and Keyframes work to create dynamic elements that response to the user interaction
 
+4. Storaging:
+- Since its a portifolio project, I didn't want to use advanced backend systems to store the notes, so I'm using localStorage for this in a way to make it just an experimental project, and not a commercial one.
+
 ## Credits
 
 Some of my friends gave me nice tips to help my deevelopment process and I can't help but mention them here:
