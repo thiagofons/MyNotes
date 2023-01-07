@@ -7,6 +7,7 @@ The web app to simulate post-it notes.
 - [Overview](#overview)
   - [Screenshots](#screenshot)
   - [Description](#description)
+  - [Links](#links)
 - [My process](#my-process)
   - [Initial ideas](#initial-ideas)
   - [Design](#design)
@@ -24,6 +25,11 @@ The web app to simulate post-it notes.
 ### Description
 
 MyNotes is an intuitive post-it simulator for navigators. Add and remove notes (literally) on a click. New functionalities coming soon!
+
+### Links
+
+- Repository: [GitHub](https://github.com/thiagofons/mynotes)
+- Live Site: [Link](https://thiagofons.github.io/mynotes)
 
 ## My process
 
